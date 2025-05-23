@@ -1,4 +1,6 @@
 # EX-NO14-HASH-ALGORITHM
+# NAME:POOJASRI L
+# REG.NO:212223220076
 
 ## AIM:
 To implement HASH ALGORITHM
@@ -27,9 +29,34 @@ To implement HASH ALGORITHM
 
 
 ## Program:
+```
+ #include <stdio.h>
+ #include <string.h>
+
+ unsigned int simple_hash(const char *message) {
+ unsigned int hash = 0;
+ int i;
+ for (i = 0; i < strlen(message); i++) {
+ hash = (hash * 31) + message[i]; 
+ }
+ return hash;
+ }
+ int main() {
+ char message[256];
+ unsigned int hash_value;
+ printf("Enter the message to hash: ");
+ fgets(message, sizeof(message), stdin);
+ message[strcspn(message, "\n")] = '\0'; 
+ hash_value = simple_hash(message);
+ printf("Generated hash value: %u\n", hash_value);
+ return 0;
+ }
+```
 
 
 ## Output:
+![image](https://github.com/user-attachments/assets/d7de07ff-d24d-4e4f-b94e-f85cf602336e)
+
 
 ## Result:
 The program is executed successfully.
